@@ -1,0 +1,43 @@
+BEGIN NEW DATA CASE
+C --------------------------------------------------------
+C Gerado por ATC - UTFPR
+C Gerado por Paula Bordin do Prado - Estudante de Engenharia Elétrica. 
+C TrabalHo de Conclusão de Curso - 2017.
+C Escrito em MatLab por Paula Bordin do Prado - 2016/2017.
+C --------------------------------------------------------
+C  dT  >< Tmax >< Xopt >< Copt >
+   1.E-5      .2     60.     60.
+      50       1       1       1       1       0       0       1       0
+C        1         2         3         4         5         6         7         8
+C 345678901234567890123456789012345678901234567890123456789012345678901234567890
+/BRANCH
+C < n 1>< n 2><ref1><ref2>< R  >< L  >< C  >
+C < n 1>< n 2><ref1><ref2>< R  >< A  >< B  ><Leng><><>0
+  TRANSFORMER                         TX0001  1.E6                             0
+        0.017675        0.057713
+        0.175500        0.750264
+      235.875000        1.125395
+            9999
+ 1      XX0002            .50000    0.1200.0
+ 2XX0022XX0016             1.E-8 1.E-55.0000
+C prim
+  XX0018XX0016            .753403.4281                                         1
+  XX0008                    .001                                               0
+C sec
+  XX0002                  3.5300    0.                                         1
+/SWITCH
+C < n 1>< n 2>< Tclose ><Top/Tde ><   Ie   ><Vf/CLOP ><  type  >
+  XX0022XX0008  .0291681        1.                                             0
+/SOURCE
+C < n 1><>< Ampl.  >< Freq.  ><Phase/T0><   Isc   ><   T1   >< TSTART >< TSTOP  >
+14XX0018 0112676.528       60.                                     -1.        1.
+14XX0022-1-1.4142       60.                                     -1.        1.
+/OUTPUT
+  XX0002
+BLANK BRANCH
+BLANK SWITCH
+BLANK SOURCE
+BLANK OUTPUT
+BLANK PLOT
+BEGIN NEW DATA CASE
+BLANK
