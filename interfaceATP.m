@@ -83,6 +83,7 @@ function figure1_CreateFcn(~, ~, ~)
 
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(~, ~, handles)
+% CARREGAR ARQUIVO ATP
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -111,9 +112,9 @@ RTC=(iprim/isec)*isec;
 % %                     ESCRITA DO ARQUIVO MODELO ATP
 % %==========================================================================
 
- a = tira_ext(meutccerto);
- a = [a '.atp'];
- fid = fopen('a.atp','w+'); % Abre arquivo .atp onde está o arquivo .m
+ arquivoGerado = removeExtensaoArquivo(matrizTC);
+ arquivoGerado = [arquivoGerado '.atp'];
+ fid = fopen('arquivoGerado.atp','w+'); % Abre arquivo .atp onde está o arquivo .m
 
 fprintf(fid,'BEGIN NEW DATA CASE\n');
 fprintf(fid,'C --------------------------------------------------------\n');
@@ -135,7 +136,7 @@ fprintf(fid,'  TRANSFORMER                         TX0001  1.E6                 
 %Determina a classe de exatidão do TC (tensão secundária)
 classe=str2double(get(handles.Classe,'String'));
 
-%Gambiarra para converter os valores de tensão para fluxo
+%Converter os valores de tensão para fluxo
 i1=(2.5/classe)*1.414;
 v1=(classe/13)/266.573;
 i2=(25/classe)*1.404;
@@ -268,8 +269,8 @@ else
     set(handles.text34,'BackgroundColor','red');
 end
 
-rodar_atp(a);
-rodar_arquivoatp();
+criarArquivoATP(arquivoGerado);
+executaArquivoATP();
 
 
 % --- Executes on button press in pushbutton3.
@@ -287,7 +288,7 @@ function pushbutton4_Callback(~, ~, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 cla
-rodar_converter
+scriptConverterPL4toMAT
 
 
 % %==========================================================================
@@ -296,9 +297,9 @@ rodar_converter
 iprim=str2double(get(handles.Corrente_primario,'String'));
 isec=str2double(get(handles.Corrente_secundario,'String'));
 RTC=(iprim/isec);
-open a.MAT;
+open arquivoGerado.MAT;
 
-filein = 'a.MAT';
+filein = 'arquivoGerado.MAT';
 
 %---------------- CARREGA OS DADOS DA SITUAÇÃO FALTOSA -------------------%
 
@@ -401,9 +402,9 @@ cla
 % %==========================================================================
 % 
 
-open a.MAT;
+open arquivoGerado.MAT;
 
-filein = 'a.MAT';
+filein = 'arquivoGerado.MAT';
 
 
 %---------------- CARREGA OS DADOS DA SITUAÇÃO FALTOSA -------------------%

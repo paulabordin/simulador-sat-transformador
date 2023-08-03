@@ -1,4 +1,4 @@
-function b = meutccerto()
+function b = matrizTC()
 
 b = [ 0       0.0  .011785088  1.4142136;
      50     .5E-3  .011575377 1.38916399;
