@@ -12,8 +12,6 @@ _Antes de rodar o simulador, verifique os paths configurado nos arquivos **criar
 2. Rode o arquivo **interfaceATP.m**
 3. Preencha com os valores a área **Característica TC**
 
-![alt text](path/to/file)
-
 4. Clique em **Editar curva de saturação** e preencha os valores, irá carregar a curva de saturação após preenchido os campos, basta fechar a janela aberta e voltar a interface.
 
 5. Preencha os dados da área **Curto** e **Z-Burden**
@@ -25,13 +23,10 @@ _Antes de rodar o simulador, verifique os paths configurado nos arquivos **criar
 9. Ao final, clique em **Plot XY** e o gráfico será plotado na área
 
 
-
-
-
 ## Exemplo/Screenshot 
 Teste SE-138kV (400m)
 
-![alt text](path/to/file)
+![alt text](https://github.com/paulabordin/simulador-sat-transformador/blob/main/imgs/exemplo-interface-com-valores.png?raw=true)
 
 
 
